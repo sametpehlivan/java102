@@ -7,7 +7,7 @@ import jdbc.entity.Student;
 
 import java.sql.*;
 
-public class deneme {
+public class App {
     public static void main(String[] args) throws SQLException {
 
         String url = "jdbc:mysql://localhost:3306/school";

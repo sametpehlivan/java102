@@ -17,7 +17,10 @@ public class DBConnection
 
     public Connection getConnection() throws SQLException
     {
-        if (connection == null) return DriverManager.getConnection(url,user,password);
+        if (connection == null){
+            connection = DriverManager.getConnection(url,user,password);
+            return connection;
+        }
         return connection;
     }
 }

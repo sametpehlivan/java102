@@ -1,8 +1,7 @@
-package Thread.tutorial1.Multiple_Locks;
+package Thread.tutorial1.D_Multiple_Locks;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 public class Multiple_Locks
 {

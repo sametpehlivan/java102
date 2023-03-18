@@ -1,4 +1,4 @@
-package Thread.tutorial1.Multiple_Locks;
+package Thread.tutorial1.D_Multiple_Locks;
 
 public class Worker
 {

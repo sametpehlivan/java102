@@ -6,20 +6,28 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 public class Helper
 {
-    private Source source = new Source(new LinkedList<Product>());
-    private Lock lock = new ReentrantLock();
-    private Condition condition = lock.newCondition();
-    public Source getSource()
+
+    private Source source;
+    private Lock lock;
+    private Condition condition;
+    public synchronized Source getSource()
     {
+        if (source == null) source = new Source(new LinkedList<Product>());
         return source;
     }
-    public Lock getLock()
+    public synchronized Lock getLock()
     {
+        if (lock == null)
+        {
+            lock = new ReentrantLock();
+        }
         return lock;
     }
 
-    public Condition getCondition()
+    public synchronized Condition getCondition()
     {
+        Lock lock = getLock();
+        if (condition == null) condition = lock.newCondition();
         return condition;
     }
 
